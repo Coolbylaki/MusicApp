@@ -35,14 +35,16 @@
 
           <!-- Tabs -->
           <ul class="flex flex-wrap mb-4">
-            <li class="flex-auto text-center">
+            <li class="flex-auto text-center mx-1">
               <a
                 class="block rounded py-3 px-4 transition"
                 href="#"
                 @click.prevent="tab = 'login'"
                 :class="{
-                  'hover:text-white text-white bg-blue-600': tab === 'login',
-                  'hover:text-blue-600': tab === 'register',
+                  'hover:text-white text-white bg-blue-600 border-blue-600 border':
+                    tab === 'login',
+                  'hover:text-blue-600 border-blue-600 border':
+                    tab === 'register',
                 }"
                 >Login</a
               >
@@ -53,8 +55,9 @@
                 href="#"
                 @click.prevent="tab = 'register'"
                 :class="{
-                  'hover:text-white text-white bg-blue-600': tab === 'register',
-                  'hover:text-blue-600': tab === 'login',
+                  'hover:text-white text-white bg-blue-600 border border-blue-600':
+                    tab === 'register',
+                  'hover:text-blue-600 border border-blue-600': tab === 'login',
                 }"
                 >Register</a
               >
