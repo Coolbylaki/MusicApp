@@ -1,5 +1,5 @@
 <template>
-  <AppHeader />
+  <app-header></app-header>
 
   <!-- Introduction -->
   <section class="mb-8 py-20 text-white text-center relative">
@@ -269,7 +269,7 @@
     </div>
   </div>
 
-  <AppAuth />
+  <app-auth></app-auth>
 </template>
 
 <script>
