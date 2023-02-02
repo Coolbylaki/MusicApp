@@ -108,6 +108,8 @@
 <script>
 import { ErrorMessage } from "vee-validate";
 import { auth, usersCollection } from "@/includes/firebase";
+import { mapWritableState } from "pinia";
+import useUserStore from "@/stores/user";
 
 export default {
   name: "RegisterForm",
@@ -130,6 +132,9 @@ export default {
       reg_alert_variant: "bg-blue-500",
       reg_alert_msg: "Please wait! Your account is being created.",
     };
+  },
+  computed: {
+    ...mapWritableState(useUserStore, ["userLoggedIn"]),
   },
   methods: {
     async register(values) {
@@ -165,6 +170,9 @@ export default {
           "An unexpected error occurred. Please try again later.";
         console.log(e);
       }
+
+      // Update state
+      this.userLoggedIn = true;
 
       this.reg_alert_variant = "bg-green-500";
       this.reg_alert_msg = "Success! Your account has been created!";
