@@ -107,8 +107,7 @@
 
 <script>
 import { ErrorMessage } from "vee-validate";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "@/includes/firebase";
+import { auth, usersCollection } from "@/includes/firebase";
 
 export default {
   name: "RegisterForm",
@@ -140,10 +139,8 @@ export default {
       this.reg_alert_msg = "Please wait! Your account is being created.";
 
       let userCred = null;
-      // const auth = getAuth();
       try {
-        userCred = await createUserWithEmailAndPassword(
-          auth,
+        userCred = await auth.createUserWithEmailAndPassword(
           values.email,
           values.password
         );
@@ -153,6 +150,20 @@ export default {
         this.reg_alert_msg =
           "An unexpected error occurred. Please try again later.";
         return;
+      }
+
+      try {
+        await usersCollection.add({
+          name: values.name,
+          email: values.email,
+          country: values.country,
+        });
+      } catch (e) {
+        this.reg_in_submission = false;
+        this.reg_alert_variant = "bg-red-500";
+        this.reg_alert_msg =
+          "An unexpected error occurred. Please try again later.";
+        console.log(e);
       }
 
       this.reg_alert_variant = "bg-green-500";
