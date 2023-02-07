@@ -17,7 +17,7 @@
               <h5>Drop your files here</h5>
             </div>
             <hr class="my-6" />
-            <!-- Progess Bars -->
+            <!-- Progress Bars -->
             <div class="mb-4">
               <!-- File Name -->
               <div class="font-bold text-sm">Just another song.mp3</div>
