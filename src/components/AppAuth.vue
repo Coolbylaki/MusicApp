@@ -65,10 +65,10 @@
           </ul>
 
           <!-- Login Form -->
-          <app-login-form v-if="tab === 'login'"></app-login-form>
+          <app-login-form v-if="tab === 'login'" />
 
           <!-- Registration Form -->
-          <app-register-form v-else></app-register-form>
+          <app-register-form v-else />
         </div>
       </div>
     </div>
