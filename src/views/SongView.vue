@@ -25,7 +25,9 @@
     <div class="bg-white rounded border border-gray-200 relative flex flex-col">
       <div class="px-6 pt-6 pb-5 font-bold border-b border-gray-200">
         <!-- Comment Count -->
-        <span class="card-title">Comments (15)</span>
+        <span class="card-title"
+          >Comments ({{ this.sortedComments.length }})</span
+        >
         <i class="fa fa-comments float-right text-green-400 text-2xl"></i>
       </div>
       <div class="p-6">
@@ -58,6 +60,7 @@
         </vee-form>
         <!-- Sort Comments -->
         <select
+          v-model="sort"
           class="block mt-4 py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-black rounded"
         >
           <option value="1">Latest</option>
@@ -70,7 +73,7 @@
   <ul class="container mx-auto">
     <li
       class="p-6 bg-gray-50 border border-gray-200"
-      v-for="comment in comments"
+      v-for="comment in sortedComments"
       :key="comment.docID"
     >
       <!-- Comment Author -->
@@ -119,6 +122,8 @@ export default {
 
       await commentsCollection.add(comment);
 
+      this.getComments();
+
       this.comment_in_submission = false;
       this.comment_alert_variant = "bg-green-500";
       this.comment_alert_msg = "Comment added!";
@@ -142,6 +147,14 @@ export default {
   },
   computed: {
     ...mapState(useUserStore, ["userLoggedIn"]),
+    sortedComments() {
+      return this.comments.slice().sort((a, b) => {
+        if (this.sort === "1") {
+          return new Date(b.datePosted) - new Date(a.datePosted);
+        }
+        return new Date(a.datePosted) - new Date(b.datePosted);
+      });
+    },
   },
   data() {
     return {
@@ -154,6 +167,7 @@ export default {
       comment_alert_variant: "bg-blue-500",
       comment_alert_msg: "Please wait! Your comment is being submitted.",
       comments: [],
+      sort: "1",
     };
   },
 };
