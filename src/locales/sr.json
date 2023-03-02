@@ -2,5 +2,9 @@
   "home": { "listen": "Slusajte Najbolju Muziku!" },
   "song": {
     "comment_count": "Nema Komentara | 1 Komentar | Komentari ({count})"
+  },
+  "register": {
+    "accept": "Prihvatam {0}",
+    "tos": "Uslove Koriscenja"
   }
 }

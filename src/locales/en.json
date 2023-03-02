@@ -1,4 +1,5 @@
 {
   "home": { "listen": "Listen to Great Music!" },
-  "song": { "comment_count": "No comments | 1 Comment | Comments ({count})" }
+  "song": { "comment_count": "No comments | 1 Comment | Comments ({count})" },
+  "register": { "accept": "Accept {0}", "tos": "Terms of Service" }
 }
