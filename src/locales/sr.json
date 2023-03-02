@@ -1,3 +1,6 @@
 {
-  "home": { "listen": "Slusajte Najbolju Muziku!" }
+  "home": { "listen": "Slusajte Najbolju Muziku!" },
+  "song": {
+    "comment_count": "Nema Komentara | 1 Komentar | Komentari ({count})"
+  }
 }
