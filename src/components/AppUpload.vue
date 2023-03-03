@@ -59,8 +59,21 @@ export default {
       const files = event.dataTransfer
         ? [...event.dataTransfer.files]
         : [...event.target.files];
+
       files.forEach((file) => {
         if (file.type !== "audio/mpeg") {
+          return;
+        }
+
+        if (!navigator.onLine) {
+          this.uploads.push({
+            task: {},
+            current_progress: 100,
+            name: file.name,
+            variant: "bg-red-400",
+            icon: "fas fa-times",
+            text_class: "text-red-400",
+          });
           return;
         }
 
