@@ -1,57 +1,36 @@
-# vueMusicApp
+# MusicApp
 
-This template should help get you started developing with Vue 3 in Vite.
+This is my final project of Vue learning course. Site is used to combine every aspect of Vue into one project and is similar to Spotify.
 
-## Recommended IDE Setup
+You can check it out on the following link: https://music-app-nine-phi.vercel.app/
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Tech stack
 
-## Customize configuration
+### Backend
++ Vite
++ Firebase Storage
++ Firebase SDK
++ Pinia
++ Vue Router
++ VeeValidate
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+### Frontend
++ Vue
++ HTML
++ CSS
++ Tailwind
 
-## Project Setup
+### API's used
++ Howler (For playing music)
++ I18n (Internationalization)
++ NProgress ( Progress bar)
 
-```sh
-npm install
-```
+### Testing
++ Vitest
++ Cypress
 
-### Compile and Hot-Reload for Development
+Concepts learned from this course:
 
-```sh
-npm run dev
-```
+![Screenshot_1](https://user-images.githubusercontent.com/74930516/222863412-35456a13-5af7-42c4-b520-8bbd95fbf40a.png)
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
-
-```sh
-npm run test:e2e:dev
-```
-
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
-
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
-```sh
-npm run build
-npm run test:e2e
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+#### **Made by Lazar Stojanović with guidance from Luis Ramirez ZTM Academy**
