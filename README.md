@@ -2,7 +2,7 @@
 
 This is my final project of Vue learning course. Site is used to combine every aspect of Vue into one project and is similar to Spotify.
 
-You can check it out on the following link: https://music-app-nine-phi.vercel.app/
+You can check it out on the following link: [https://music-app-nine-phi.vercel.app/](https://music-app-puce-nu.vercel.app/)
 
 ## Tech stack
 
